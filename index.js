@@ -48,7 +48,7 @@ module.exports = function (opts) {
         }
         else if (first && stream.hasExports) {
             var pre = opts.externalRequireName || 'require';
-            stream.push(Buffer(pre + '='));
+            stream.push(Buffer('window['+ JSON.stringify (pre) + ']='));
         }
         if (first) stream.push(Buffer(prelude + '({'));
         
